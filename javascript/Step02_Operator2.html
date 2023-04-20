@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step02_Operator2.html</title>
+</head>
+<body>
+    <h1>논리 연산자</h1>
+    <script>
+        /*
+        2.논리값을 연산해주는 연산자
+        */
+
+        //연산에 참여하는 boolean값이 모두가 true면 t
+        //and 연산자
+        let result1=false&&false;//f
+        let result2=false&&true;//f
+        let result3=true&&false;//f
+        let result4=true&&true;//t
+
+        //연산에 참여하는 boolean값이 어느하나만 true면 t
+        //or 연산자
+        let result5=false||false;//f
+        let result6=false||true;//t
+        let result7=true||false;//t
+        let result8=true||true;//t
+
+        let result9=!true;//f
+        let result10=!false;//t
+
+        let isRun=confirm("달릴건가요?");
+        let isWait=confirm("기다릴건가요?");
+
+    </script>
+</body>
+</html>

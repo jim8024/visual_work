@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example3</title>
+    <style>
+        .box{
+            width:100px;
+            height: 100px;
+            border: 1px solid red;
+            background-color: yellow;
+            cursor: pointer;
+            transition: matgin-left 0.4 ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div1</div>
+    <div class="box">div</div>
+    <div class="box">div3</div>
+    <div class="box">div4</div>
+    <div class="box">div5</div> 
+
+<script>
+    //마진 위치 차이
+    for(let i=0;i<5;i++){
+        //margin Left 저장할 변수 만들고 초기값 저장
+        let margin=0;
+            //margin+=100;
+            document.querySelectorAll(".box")[i].addEventListener("click",(e)=>{
+                margin+=100;
+            e.target.style.marginLeft=margin+"px";
+            //margin+=100;
+        })
+    }
+    
+/*
+let divs = document.querySelectorAll(".box");
+for(let i=0;i<divs.length;i++){
+    divs[i].addEventistener("clcick",(e)=>{
+        e.target.style.marinLeft=margin+"px";
+     });
+    }
+함수를 변수에 담는 이유는 필요한 시점에 call하려고 하는 것이다
+그런데 굳이 한번 사용할 데이터를 변수에 담을 이유는 없다.
+
+함수를 만들자마자 바로 콜하기
+(functiom(){})() <= function type 
+*/
+</script>
+</body>
+</html>

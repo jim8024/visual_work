@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steo3_Datatype3.html</title>
+</head>
+<body>
+    <h1>javascript data type</h1>
+    <p>object type</p>
+    <script>
+        /*
+            한명의 회원정보를 다루고자 한다.
+            번호 이름  성별(남자인지 여부)
+        */
+
+        // 번호는1 이거 이름은 chae 성별은 남자인 회원의 정보를 변수3개 각각 담아 보세요
+       let num=1;
+       let name="chae";
+       let isMale=true;
+
+       //하나의 변수명으로 여러개의 값을 관리(object type)
+       let mem1={num:1,name:"chae",isMale:true};
+       let mem2={
+        num:1,
+        name:"chae",
+        isMale:true
+       };
+
+       let mem3={num:num, name:name, isMale:isMale};
+       let mem4={num,name,isMale};
+
+       let a=mem1;
+       let b=mem1.num;
+       let c=mem1.name;
+       let d=mem1.isMale;
+
+       //빈 object를 만들고 나중에  필요에 따라서 데이터를 추가 할 수 이있다.
+       let mem5={};
+       mem5.num=2;
+       mem5.name="lee";
+       mem5.isMale=true;
+       //이미 만들어져 있는 object값에 저장된값 수정하기
+       mem2.num=3;
+       mem2.name="park";
+       mem2.isMale=true;
+    </script>
+</body>
+</html>

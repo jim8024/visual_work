@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_loop5.html</title>
+</head>
+<body>
+    <h1>배열의 함수를 활용해서 반복작업 수행하기</h1>
+    <p>p1</p>
+    <p>p2</p>
+    <p>p3</p>
+    <p>p4</p>
+    <p>p5</p>
+    <button onclick="print()">출력하기</button>
+ 
+    <script>
+        let nums=[10,20,30,40,50]
+        //nums.forEach(function(item,index){
+        //    console.log(item+"::"+index);
+        //});
+        /*
+        출력하기 버튼을 누르면 배열의 담긴 숫자가 위의 요소p 순서대로 출력되도록
+        */
+           
+       /* nums.forEach(print=(item,index)=>{
+                document.querySelectorAll("p")[index].innerText=item;
+        })*/
+        let print=()=>{
+            nums.forEach(function(item,index){
+                document.querySelectorAll("p")[index].innerText=item;
+            });
+        };
+          /*
+          let print=()=>{
+        let text=document.querySelectorAll("p")
+        for(let i=0;i<5;i++){
+            text[i].innerText=nums[i];
+        }
+     };
+          */
+        
+
+    </script>
+</body>
+</html>

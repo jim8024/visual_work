@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step04_loop3.html</title>
+</head>
+<body>
+    <h1>배열과 반복문</h1>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+    </ul>
+    <button onclick="print()">출력하기</button>
+    <script>
+        //li의 inertextㄹ로 출력하 문자열이 배열에 준비되어있다고 생각하자
+        let names=["kim","lee","park","chae","jang"]
+
+        //출력하기 버튼을 누르면 names의 배열된 내용이 나오도록
+
+        let print=()=>{
+            for(let i=0;i<5;i++){
+                document.querySelectorAll("ul>li")[i].innerText=names[i];
+            }
+        }
+    
+    </script>
+</body>
+</html>

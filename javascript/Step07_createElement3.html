@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputMsg" placeholder="메세지 입력">
+    <button id="sendBtn">전송</button>
+    <h3>전송 받은 메세지 목록</h3>
+    <ul id="msgList">
+        <li>하나</li>
+        <li>두울</li>
+    </ul>
+    <script>
+        //id가 sendBtn 인 곳에 클릭 이벤트가 일어 났을때 실향할 콜백 함수 등록
+        document.querySelector("#sendBtn").addEventListener("click",()=>{
+            //1.input 요소에 입력한 value 값을 가져온다
+            //msg는 스트링 타입
+            let msg=document.querySelector("#inputMsg").value;
+            //2.li요소를 만든다
+            let li=document.createElement("li");
+            //3.만든 li요소에 innertext로 input 요소에서 읽어온 value값을 넣어준다
+            li.innerText=msg;
+            //4.위에서 만든 li요소를 id가 msglist인 곳에 추가한다(append)
+            document.querySelector("#msgList").append(li);
+        })
+        
+    </script>
+</body>
+</html>

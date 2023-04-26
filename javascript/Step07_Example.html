@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <style>
+        .container{
+            width:768px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>친구 목록입니다</h1>
+        <button id="printBtn">출력하기</button>
+        <ul id="friendlist">
+            
+        </ul>
+    </div>
+    <script>
+        //페이지 로딩시점에 일어난일
+        //names라는 변수에 배열 참조값등록, 클릭하면 실행될 콜백함수가 등록됨
+        let names=["김구라","해골","원숭이","주댕이","죽탱이"];
+        //위의 배열에 저장된 이름을 친구 목록에 출력해보세요
+        document.querySelector("#printBtn").addEventListener("click",()=>{
+            for(let i=0;i<names.length;i++){
+             let li=document.createElement("li");
+                li.innerText=names[i];
+                document.querySelector("#friendlist").append(li);      
+        }
+    })
+    
+    </script>
+</body>
+</html>
+

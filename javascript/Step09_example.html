@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example</title>
+</head>
+<body>
+    <h1>setInterval,setTimeout 함수 사용해보기</h1>
+    <p>
+        <strong id="min">0</strong>분
+        <strong id="sec">0</strong>초
+    </p>
+    <script>
+       let sec=0;
+       let min=0
+        setInterval(()=>{
+            //초를 1씩 증가 
+            sec++;
+
+            //만일 증가된 초가 60이면 분을 1 증가.
+            if(sec==60){
+                min++;
+                sec=0;
+            }
+            //초와 문을 위의 strong 요소에 innerTect로 출력한다.
+            document.querySelector("#sec").innerText=sec;
+            document.querySelector("#min").innerText=min;
+        },10);
+
+
+
+
+        //페이지 로딩이후에 1초뒤에 호출이 된다
+        //setInterval,setTimeout 함는 내장함수이다
+        setTimeout(()=>{
+            console.log("setTimeout에 전달한 함수가 호출이 되네?");
+        },1000);//딜레이 시간(ms)
+
+
+        setInterval(()=>{
+            console.log("setInterval 에 전달된 함수가 호출되네?");
+        }, 1000);
+    </script>
+    
+</body>
+</html>
+
+ 

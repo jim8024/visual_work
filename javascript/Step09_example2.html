@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example2</title>
+</head>
+<body>
+    <h1>스탑워치 만들어보기</h1>
+    <p>
+        <strong id="min">0</strong>
+        <strong id="sec">0</strong>
+        <strong id="msec">0</strong>
+    </p>
+    <button id="startBtn">시작</button>
+    <button id="resetBtn">재설정</button>
+
+    <script>
+        //변수 선언 여러개 하기
+        let min=0, sec=0, msec=0;
+        let isStarted = false;
+        document.querySelector("#startBtn").addEventListener("click",(e)=>{
+            //이벤트가 일어난 요소의 이너텍스트 바꾸기
+
+            //만일 시작된 state라면 중단으로 바꾸고 
+            if(isStarted){
+                isStarted=false;
+                e.target.innerText="시작";
+            }else{
+                isStarted=true;
+                e.target.innerText="중단";
+            }
+            //중단된 state 라면 시작으로 바꾼다
+            
+        });
+
+
+
+        setInterval(()=>{
+            //만일 시작된 상태가 아니라면 함수를 여기서 종료하기
+            if(! isStarted){
+                return;
+            }
+            //1/100초 마다 호출 되는 함수
+            msec++;
+            if(msec==100){
+                sec++;
+                msec=0;
+            }
+            if(sec==60){
+                min++;
+                sec=0;
+            }
+            document.querySelector("#msec").innerText=msec;
+            document.querySelector("#sec").innerText=sec;
+            document.querySelector("#min").innerText=min;
+
+        },10);
+        
+        document.querySelector("#resetBtn").addEventListener("click",()=>{
+            //모두 초기화
+            //초기화된 값을 화면에 반영
+
+            min=0;
+            sec=0;
+            msec=0;
+            isStarted=false;
+            document.querySelector("#msec").innerText=msec;
+            document.querySelector("#sec").innerText=sec;
+            document.querySelector("#min").innerText=min;
+            //버튼도 초기화
+            document.querySelector("#startBtn").innerText="시작"
+        });
+
+
+    </script>
+</body>
+</html>

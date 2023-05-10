@@ -97,10 +97,10 @@
             //토끼 그리기
             context.drawImage(rabbitImgs[rabbitIndex], rabbitX-50, rabbitY-50, 100, 100);
             //풍선 그리기
-            for(let i=0;i<bubbles.length;i++){
-               //첫번째 풍선정보를 가지고 있는 오브젝트 참조해서
+            for(let i=0; i<bubbles.length; i++){
+                //i번째 풍선 정보를 가지고 있는 object 를 참조해서
                 let tmp=bubbles[i];
-                //object 안에 있는 정보를 바탕으로 풍선을 그린다
+                //object 안에 있는 정보를 바탕으로 풍선을 그린다.
                 context.drawImage(bubbleImgs[tmp.index], tmp.x-25, tmp.y-25, 50, 50);
             }
            //풍선 움직이기

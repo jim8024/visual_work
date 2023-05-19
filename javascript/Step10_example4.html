@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text1" placeholder="번호입력" id="inputNum">
+    <br>
+    <input type="text2" placeholder="이름입력" id="inputName">
+    <br>
+    <input type="tex3" placeholder="주소입력" id="inputAddr">
+    <br>
+    <button id="saveBtn">저장</button>
+    <button id="deleteBtn">삭제</button> 
+    <script>
+        //번호 이름을 입력하고 저장 버튼을 누르면 localstorage에 저장하고
+        //삭제 버튼을 누르면 localstorage에서 삭제하고
+        document.querySelector("#saveBtn").addEventListener("click",()=>{
+            //1.입력한 내용 읽어와서
+            const num=Number(document.querySelector("#inputNum").value);
+            const name=document.querySelector("#inputName").value;
+            const addr=document.querySelector("#inputAddr").value;
+            //2.object에 담고
+            const obj={num:num,name:name,addr:addr}; //={num,name,addr}
+            //3.object를 JSON문자열로 만들어서
+            const json=JSON.stringify(obj);
+            //4.localstorage에 저장
+            localStorage.savedMember=json;
+        })
+        document.querySelector("#deleeteBtn").addEventListener("click",()=>{
+            delete localStorage.savedMember;
+        })
+        //페이지 로딩시점에 localstorage에 저장된 번호,이름 즈소가 있다면 
+        //위의 input요소에 출력되도록해보세요
+        if(localStorage.savedMember){        //만약에 값이 있다면
+            //localStorage에 저장된 문자열을 이용해서 object를 만든다
+            const obj=JSON.parse(localStorage.savedMember);
+            //object에 저장된 내용을 출력
+            document.querySelector("#inputNum").value=obj.num;
+            document.querySelector("#inputName").value=obj.name;
+            document.querySelector("#inputAddr").value=obj.addr;
+        }
+
+
+
+
+
+    </script>   
+</body>
+</html>
